@@ -27,9 +27,6 @@
                         <td><button onclick='func(<?= json_encode($message); ?>);'>JSON</button></td>
                     </tr>
                 <?php endforeach; ?>
-                    <tr>
-                        <td></td>
-                    </tr>
             </table>
         </nav>
         <article>
