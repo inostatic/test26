@@ -13,12 +13,14 @@ class MessageController {
                         $username = htmlspecialchars($_POST['username']);
                         $email = htmlspecialchars($_POST['email']);
                         $text = htmlspecialchars($_POST['text']);
+                        $ip = $_SERVER['SERVER_ADDR'];
+                        $browser = $_SERVER["HTTP_USER_AGENT"];
                         if (!empty($_POST['homepage'])) {
                             $homepage = htmlspecialchars($_POST['homepage']);
                         } else {
-                            $homepage = "NULL";
+                            $homepage = NULL;
                         }
-                        $data = ['username' => $username, 'email' => $email, 'text' => $text, 'homepage' => $homepage];
+                        $data = ['username' => $username, 'email' => $email, 'text' => $text, 'homepage' => $homepage, 'ip' => $ip, 'browser' => $browser];
                         Add::methodAdd($data);
                         header('Location: '.URL);
                     }
